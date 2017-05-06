@@ -6,6 +6,10 @@
     const path = require('path');
     
     const publicFolder = '../../public';
+    const todoRoutes = require('../todo-list/todo-route');
+
+    const mongoConnection = require('../infra/mongo/connection');
+    mongoConnection.connect(); 
 
     let app = express();
 
@@ -13,7 +17,7 @@
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         next();
-    });
+    }); 
 
     app.use(express.static(path.join(__dirname, publicFolder)));
 
@@ -26,10 +30,7 @@
 
     app.use(bodyParser.json());
 
-    // change for routes.
-    app.get('/', function (req, res) {
-        res.send('Hello World!')
-    });
+    app.use('/todo', todoRoutes);
 
     module.exports = app;
 })();
