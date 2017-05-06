@@ -9,7 +9,7 @@
     <title>TODO-list</title>
 </head>
 
-<body>
+<body ng-app="todoList" ng-controller="TodoController as todoCtrl">
     <header>
         <h1>Welcome to TODO-list</h1>
         <div class="search">
@@ -22,53 +22,13 @@
             <img class="add-icon" src="assets/img/add.png" alt="Add new TODO">
             <p class="add-text">You can add new TODO any time.</p>
             <form>
-                <input class="add-input" type="text">
+                <input class="add-input" type="text"> 
                 <button class="add-button" type="submit">Create</button>
             </form>
         </div>
         <ul>
-            <li>
-                <p class="item-text">Eu sou um item da lista img</p> 
-                <div class="item-group-icons">
-                    <img class="item-icon" src="assets/img/checkmark.png" alt="Mark as completed"> 
-                    <img class="item-icon" src="assets/img/edit.png" alt="Edit TODO">
-                    <img class="item-icon" src="assets/img/delete.png" alt="Delete TODO">
-                </div>
-            </li>
-            <li>
-                <p class="item-text">Eu sou um item da lista img</p> 
-                <div class="item-group-icons">
-                    <img class="item-icon" src="assets/img/checkmark.png" alt="Mark as completed"> 
-                    <img class="item-icon" src="assets/img/edit.png" alt="Edit TODO">
-                    <img class="item-icon" src="assets/img/delete.png" alt="Delete TODO">
-                </div>
-            </li>
-            <li>
-                <p class="item-text">Eu sou um item da lista img</p> 
-                <div class="item-group-icons">
-                    <img class="item-icon" src="assets/img/checkmark.png" alt="Mark as completed"> 
-                    <img class="item-icon" src="assets/img/edit.png" alt="Edit TODO">
-                    <img class="item-icon" src="assets/img/delete.png" alt="Delete TODO">
-                </div>
-            </li>
-            <li>
-                <p class="item-text">Eu sou um item da lista img</p> 
-                <div class="item-group-icons">
-                    <img class="item-icon" src="assets/img/checkmark.png" alt="Mark as completed"> 
-                    <img class="item-icon" src="assets/img/edit.png" alt="Edit TODO">
-                    <img class="item-icon" src="assets/img/delete.png" alt="Delete TODO">
-                </div>
-            </li>
-            <li>
-                <p class="item-text">Eu sou um item da lista img</p> 
-                <div class="item-group-icons">
-                    <img class="item-icon" src="assets/img/checkmark.png" alt="Mark as completed"> 
-                    <img class="item-icon" src="assets/img/edit.png" alt="Edit TODO">
-                    <img class="item-icon" src="assets/img/delete.png" alt="Delete TODO">
-                </div>
-            </li>
-            <li>
-                <p class="item-text">Eu sou um item da lista img</p> 
+            <li ng-repeat="todo in todoCtrl.todos">
+                <p class="item-text">{{todo.description}}</p> 
                 <div class="item-group-icons">
                     <img class="item-icon" src="assets/img/checkmark.png" alt="Mark as completed"> 
                     <img class="item-icon" src="assets/img/edit.png" alt="Edit TODO">
@@ -80,6 +40,13 @@
     <footer class="footer">
         <p class="copyright">© copyright TODO-list 2017</p>
     </footer>
+
+    <script src="../../angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/config/api-url-factory.js"></script>
+    <script type="text/javascript" src="js/todo-list/todo-service.js"></script>
+    <script type="text/javascript" src="js/todo-list/todo-controller.js"></script>   
+
 </body>
 
 </html>

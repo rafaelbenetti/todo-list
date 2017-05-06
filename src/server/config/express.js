@@ -6,6 +6,7 @@
     const path = require('path');
     
     const publicFolder = '../../public';
+    const publicFolderScripts = '../../../bower_components';
     const todoRoutes = require('../todo-list/todo-route');
 
     const mongoConnection = require('../infra/mongo/connection');
@@ -20,6 +21,7 @@
     }); 
 
     app.use(express.static(path.join(__dirname, publicFolder)));
+    app.use(express.static(path.join(__dirname, publicFolderScripts)));
 
     app.set('views', path.join(__dirname, '../../public'));
     app.engine('html', require('ejs').renderFile);

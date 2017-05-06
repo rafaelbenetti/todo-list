@@ -1,0 +1,16 @@
+{
+  "name": "todo-list",
+  "description": "Project to help you organize your TO-DO list.",
+  "main": "index.js",
+  "authors": [
+    "Rafael de Oliveira Benetti"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "todo;list"
+  ],
+  "homepage": "https://github.com/rafaelbenetti/todo-list",
+  "dependencies": {
+    "angular": "^1.6.4"
+  }
+}

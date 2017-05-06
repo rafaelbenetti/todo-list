@@ -4,7 +4,7 @@
   "description": "TODO-list",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && nodemon -L index.js",
+    "start": "npm install && npm install -g bower && bower install --allow-root && nodemon -L index.js",
     "test": "mocha src/tests/ --watch"
   },
   "repository": {
