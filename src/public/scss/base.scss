@@ -1,9 +1,53 @@
-$primary-color: yellow;
+$first-color: #1E824C;
+$second-color: #fff;
+$third-color: #808080;
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    background: $primary-color;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+}
+
+header {
+    background: $first-color;
+    color: $second-color;
+    padding: 10px;
+    h1 {
+        margin: 0px;
+        padding: 10px;
+    }
+    .search {
+        height: 40px;
+        .input-search {
+            border: none;
+            border-radius: 4px;
+            color: $third-color;
+            font-size: 16px;
+            height: 40px;
+            padding-left: 10px;
+            position: relative;
+            top: -15px;
+        }
+        .img-search {
+            margin-left: 10px;
+            height: 40px;
+            cursor: pointer;
+        }
+    }
+}
+
+footer {
+    background: $first-color;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    .copyright {
+        color: $second-color;
+        margin: 5px;
+    }
 }
