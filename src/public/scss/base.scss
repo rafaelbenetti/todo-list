@@ -1,0 +1,9 @@
+$primary-color: yellow;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: $primary-color;
+}

@@ -1,0 +1,23 @@
+version: '3'
+
+services:  
+  db:
+    image: mongo
+    ports: 
+      - 27017:27017
+  cache:
+    image: redis
+    ports:
+      - 6379:6379
+  api:
+    image: rafaelbenetti/todo-list
+    volumes:
+      - /home/rafaelbenetti/workspace/todo-list:/usr/src/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    environment:
+      - NODE_ENV=dev
+      - SESSION_SECRET_KEY=parangaricutirimiruaro
+    command: npm start & gulp

@@ -1,0 +1,49 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "TODO-list",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm install && nodemon -L index.js",
+    "test": "mocha src/tests/ --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelbenetti/todo-list.git"
+  },
+  "keywords": [
+    "todo;list;"
+  ],
+  "author": "Rafael de Oliveira Benetti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelbenetti/todo-listr/issues"
+  },
+  "homepage": "https://github.com/rafaelbenetti/todo-list#readme",
+  "dependencies": {
+    "connect-redis": "^3.2.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "express-load": "^1.1.15",
+    "express-session": "^1.15.2",
+    "mongodb": "^2.2.25",
+    "multer": "^1.3.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "promise": "^7.1.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0",
+    "gulp-chmod": "^2.0.0",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "autoprefixer": "^6.7.7",
+    "body-parser": "^1.17.1",
+    "del": "^2.2.2"
+  }
+}
