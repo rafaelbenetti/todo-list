@@ -6,7 +6,17 @@
     const COLLECTION = 'todo';
     let todoService = {};
 
-    todoService.find = function () {
+    todoService.find = function (search) {
+        return new Promise((resolve, reject) => {
+            mongo.DB.collection(COLLECTION)
+                .find({description: {$regex: search, $options: 'i'}})
+                .toArray()
+                .then((result) => resolve(result),
+                    reject);
+        });
+    };
+
+    todoService.findAll = function () {
         return new Promise((resolve, reject) => {
             mongo.DB.collection(COLLECTION)
                 .find()
@@ -15,6 +25,7 @@
                     reject);
         });
     };
+    
 
     todoService.create = function (todo) {
         return new Promise((resolve, reject) => {

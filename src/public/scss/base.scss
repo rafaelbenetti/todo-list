@@ -1,7 +1,7 @@
 $first-color: #1E824C;
 $second-color: #fff;
 $third-color: #808080;
-
+$error-color: #a14949;
 * {
     box-sizing: border-box;
 }
@@ -36,9 +36,19 @@ header {
         .img-search {
             margin-left: 10px;
             height: 40px;
-            cursor: pointer;
+            cursor: pointer; 
         }
     }
+}
+
+.error-label {
+    color: $error-color;
+    font-size: 90%;
+    top: -10px;
+    text-align: left;
+    position: relative;
+    width: 80%;
+    display: inline-block;
 }
 
 footer {

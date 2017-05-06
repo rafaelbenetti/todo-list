@@ -10,7 +10,7 @@
     router.route('/')
         .get((req, res) => {
             todoController
-                .find()
+                .findAll()
                 .then((todos) => res.json(todos));
         })
         .post((req, res) => {
@@ -26,12 +26,19 @@
                     (error) => res.status(400).json(error));
         });
 
+    router.route('/:description')
+        .get((req, res) => {
+            todoController
+                .find(req.params.description)
+                .then((todos) => res.json(todos));
+        });
+
     router.route('/:id')
-         .delete((req, res) => {
-             todoController
-                 .delete(req.params.id)
-                 .then(() => res.sendStatus(204));
-         });  
+        .delete((req, res) => {
+            todoController
+                .delete(req.params.id)
+                .then(() => res.sendStatus(204));
+        });
 
     module.exports = router;
 })();
