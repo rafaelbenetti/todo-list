@@ -35,3 +35,12 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# Bower components
+bower_components
+
+# Assets
+src/public/assets/css
+
+# Vs code
+.vscode
