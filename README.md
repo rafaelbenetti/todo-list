@@ -9,8 +9,9 @@ git clone https://github.com/rafaelbenetti/todo-list
 
 sudo docker build -t rafaelbenetti/todo-list .
 
-mudar o volume do arquivo docker-compose.yml para o local que fez download do código
+mudar o volume do arquivo docker-compose.yml para o local que você fez download do código
     Ex: /home/rafaelbenetti/workspace/todo-list:/usr/src/app
+    OBS: primeira parte é o caminho raiz da aplicação / segunda parte é o caminho dentro do container (deve manter o mesmo)
 
 sudo docker-compose up
 ```
@@ -25,7 +26,13 @@ Exemplo: http://localhost:3000
 
 ## Como executar os testes
 
-Em breve...
+Após subir o ambiente acessar o container que contém o nodeJS.
+
+```
+sudo docker exec -it todolist_api_1 bash
+
+npm test
+```
 
 ## Tecnologias utilizadas
 
@@ -42,9 +49,9 @@ Aqui está a lista com as tecnologias utilizadas:
 
 * [AngularJS](https://angularjs.org/)
 * [Sass](http://sass-lang.com/)
-* [HTML]
-* [CSS]
-* [JS]
+* HTML
+* CSS
+* JS
 
 ### Back-end
 
@@ -53,9 +60,14 @@ Aqui está a lista com as tecnologias utilizadas:
 * [MongoDB](https://www.mongodb.com/)
 * [Redis](https://redis.io/)
 
+### Test
+
+* [Supertest](https://github.com/visionmedia/supertest)
+* [Mocha](https://mochajs.org/)
+
 ## Próximos passos
 
 Como não foi possivel finalizar devido ao pouco tempo, seguem os próximos passos planejados:
-#### - Adicionar controle de usuários usando PassportJS e Redis para controle de sessão.
-#### - Criar modal customizada para apresentar mensagens.
-#### - Criar push notifications para informar o usuário dos erros/sucessos.
+* Adicionar controle de usuários usando PassportJS e Redis para controle de sessão.
+* Criar modal customizada para apresentar mensagens.
+* Criar push notifications para informar o usuário dos erros/sucessos.
