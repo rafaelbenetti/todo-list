@@ -1,5 +1,4 @@
 section.content {
-    background: #f7f7f7;
     border-radius: 2px;
     display: inline-block;
     margin-bottom: 60px;
@@ -11,22 +10,30 @@ section.content {
         margin: 0;
     }
     li {
-        background: $second-color;
+        background: $fourth-color;
         border-radius: 2px;
         color: $third-color;
         list-style: none;
         margin: 10px;
-        padding: 20px;
-    } 
+        padding: 20px 10px 20px 10px;
+    }
     .todo-completed {
         background: $first-color;
+        border-radius: 3px;
         color: $second-color;
+        padding: 3px;
+        position: relative;  
+        bottom: 18px;   
     }
 }
 
 .item-text {
     text-align: center;
-} 
+}
+
+.item-input {
+    width: 60%;
+}
 
 .item-group-icons {
     text-align: center;
@@ -46,6 +53,13 @@ section.content {
     margin-bottom: 0;
 }
 
+.add-group {
+    text-align: left;
+    form {
+        text-align: center;
+    }
+}
+
 .add-text {
     bottom: 15px;
     color: $first-color;
@@ -55,31 +69,12 @@ section.content {
     margin-bottom: 0;
     position: relative;
     text-align: left;
-    width: 80%;
 }
 
 .add-input {
-    width: 80%;
-    height: 50px;
-    border: none;
-    border-radius: 5px;
-    margin: 20px;
-    color: $third-color;
-    font-size: 16px;
-    padding: 10px;
-}
-
-.add-button {
-    height: 50px;
-    width: 80%;
-    border: none;
-    border-radius: 25px;
-    background: $first-color;
-    color: #fff;
-    font-size: 22px;
-    &:focus {
-        outline: none;
-    }
+    width: 70%;
+    border: 1px solid $fourth-color;
+    margin: 15px;
 }
 
 @media screen and (min-width: 768px) {
@@ -100,10 +95,16 @@ section.content {
     .item-text {
         display: inline-block;
     }
+    .item-input {
+        width: 80%;
+    }
     .item-text {
-        max-width: 70%;
+        max-width: 65%;
     }
     .item-group-icons {
         float: right;
+    }
+    .add-group form {
+        text-align: left;
     }
 }

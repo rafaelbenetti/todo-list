@@ -22,13 +22,14 @@
         controller.create = (todo) => {
             todoService.create(todo)
                 .then((newTodo) => {
-                    controller.todos.push(newTodo);
+                    controller.todos.unshift(newTodo);
                     controller.todo = {};
                     controller.createForm.$setPristine();
                 });
         }
 
         controller.update = (todo) => {
+            delete todo['editing'];
             todoService.update(todo)
                 .then(() => {
                     updateTodo(todo);
@@ -41,7 +42,7 @@
         }
 
         controller.delete = (id) => {
-            if (confirm('Are you sure you want to remove this TODO forever?')) {
+            if (confirm('Are you sure you want to remove this to do forever?')) {
                 todoService.delete(id)
                     .then(removeFromTodos(id));
             }

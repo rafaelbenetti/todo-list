@@ -1,6 +1,7 @@
 $first-color: #1E824C;
 $second-color: #fff;
 $third-color: #808080;
+$fourth-color: #e4e4e4;
 $error-color: #a14949;
 * {
     box-sizing: border-box;
@@ -36,8 +37,35 @@ header {
         .img-search {
             margin-left: 10px;
             height: 40px;
-            cursor: pointer; 
+            cursor: pointer;
         }
+    }
+}
+
+.btn {
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    background: $first-color;
+    color: $second-color;
+    cursor: pointer;
+    font-size: 16px;
+    &:focus {
+        outline: none;
+    }
+}
+
+.input {    
+    display: inline-block;    
+    border: 1px solid #afa9a9;
+    border-radius: 2px;
+    color: $third-color;
+    font-size: 16px;
+    height: 40px;
+    padding-left: 10px;
+    &:focus {
+        outline: none;
     }
 }
 
@@ -49,6 +77,7 @@ header {
     position: relative;
     width: 80%;
     display: inline-block;
+    margin-left: 20px;
 }
 
 footer {

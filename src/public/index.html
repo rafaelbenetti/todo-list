@@ -18,31 +18,34 @@
         </div>
     </header>
     <section class="content">
-        <div class="group-add">
+        <div class="add-group">
             <img ng-hide="todoCtrl.todo" ng-click="todoCtrl.add()" class="add-icon" src="assets/img/add.png" alt="Add new TODO">
             <img ng-show="todoCtrl.todo" ng-click="todoCtrl.remove()" class="add-icon" src="assets/img/remove.png" alt="Remove new TODO">
-            <p class="add-text">Add new to do.</p>
+            <p class="add-text">Add a new item</p>
             <form ng-show="todoCtrl.todo" name="todoCtrl.createForm" ng-submit="todoCtrl.createForm.$valid && todoCtrl.create(todoCtrl.todo)" novalidate>
-                <input class="add-input" type="text" ng-model="todoCtrl.todo.description" name="description" ng-minlength="3" ng-maxlength="150" required> 
+                <input class="input add-input" type="text" ng-model="todoCtrl.todo.description" name="description" ng-minlength="3" ng-maxlength="150" required> 
                 <span class="error-label" ng-show="todoCtrl.createForm.$submitted && todoCtrl.createForm.description.$error.required">Description is required.</span>
                 <span class="error-label" ng-show="todoCtrl.createForm.$submitted && todoCtrl.createForm.description.$error.minlength">Description must have at least 3 caracters.</span>       
                 <span class="error-label" ng-show="todoCtrl.createForm.$submitted && todoCtrl.createForm.description.$error.maxlength">Description can have at max 150 caracters.</span>
-                <button class="add-button" type="submit">Create</button>
+                <button class="btn" type="submit">Create</button>
             </form>
-        </div>
+        </div> 
         <ul>
-            <li ng-repeat="todo in todoCtrl.todos" ng-class="{'todo-completed':todo.completed}">
-                <p class="item-text">{{todo.description}}</p> 
-                <div class="item-group-icons">
+            <li ng-repeat="todo in todoCtrl.todos">
+                <p ng-hide="todo.editing"  class="item-text">{{todo.description}}</p> 
+                <input ng-show="todo.editing" class="input item-input" type="text" ng-model="todo.description">
+                <button class="btn" ng-show="todo.editing" ng-click="todoCtrl.update(todo)">Save</button>
+                <div ng-hide="todo.editing" class="item-group-icons">
+                    <span ng-show="todo.completed" class="todo-completed">completed</span>
                     <img ng-click="todoCtrl.updateCompleted(todo)" class="item-icon" src="assets/img/checkmark.png" alt="Mark as completed"> 
-                    <img class="item-icon" src="assets/img/edit.png" alt="Edit TODO">
+                    <img ng-click="todo.editing = true" class="item-icon" src="assets/img/edit.png" alt="Edit TODO">
                     <img ng-click="todoCtrl.delete(todo._id)" class="item-icon" src="assets/img/delete.png" alt="Delete TODO">
                 </div>
             </li>
         </ul>
     </section>
     <footer class="footer">
-        <p class="copyright">© copyright TODO-list 2017</p>
+        <p class="copyright">© copyright todo-list 2017</p>
     </footer>
 
     <script src="../../angular/angular.min.js"></script>

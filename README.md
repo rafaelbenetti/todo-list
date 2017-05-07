@@ -9,6 +9,9 @@ git clone https://github.com/rafaelbenetti/todo-list
 
 sudo docker build -t rafaelbenetti/todo-list .
 
+mudar o volume do arquivo docker-compose.yml para o local que fez download do código
+    Ex: /home/rafaelbenetti/workspace/todo-list:/usr/src/app
+
 sudo docker-compose up
 ```
 
