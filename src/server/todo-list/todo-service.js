@@ -46,7 +46,6 @@
 
     todoService.update = function (todo) {
         return new Promise((resolve, reject) => {
-            console.log(todo);
             mongo.DB.collection(COLLECTION)
                 .updateOne({
                     _id: new mongo.ObjectID(todo._id)
