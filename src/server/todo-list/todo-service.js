@@ -9,7 +9,13 @@
     todoService.find = function (search) {
         return new Promise((resolve, reject) => {
             mongo.DB.collection(COLLECTION)
-                .find({description: {$regex: search, $options: 'i'}})
+                .find({
+                    description: {
+                        $regex: search,
+                        $options: 'i'
+                    }
+                })
+                .sort({order: 1})
                 .toArray()
                 .then((result) => resolve(result),
                     reject);
@@ -19,13 +25,15 @@
     todoService.findAll = function () {
         return new Promise((resolve, reject) => {
             mongo.DB.collection(COLLECTION)
-                .find()
+                .find({}, {
+                    sort: "order"
+                })
                 .toArray()
                 .then((result) => resolve(result),
                     reject);
         });
     };
-    
+
 
     todoService.create = function (todo) {
         return new Promise((resolve, reject) => {

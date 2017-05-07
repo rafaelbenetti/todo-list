@@ -12,7 +12,7 @@ section.content {
     li {
         background: $fourth-color;
         border-radius: 2px;
-        color: $third-color;
+        color: $third-color;        
         list-style: none;
         margin: 10px;
         padding: 20px 10px 20px 10px;
@@ -24,6 +24,12 @@ section.content {
         padding: 3px;
         position: relative;  
         bottom: 18px;   
+    }
+    .drag-handle {
+        cursor: row-resize;
+        font-size: 40px;
+        margin-right: 5px;
+        float: left;
     }
 }
 
@@ -99,12 +105,18 @@ section.content {
         width: 80%;
     }
     .item-text {
-        max-width: 65%;
+        max-width: 50%;
     }
     .item-group-icons {
         float: right;
     }
     .add-group form {
         text-align: left;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .item-text {
+        max-width: 70%;
     }
 }

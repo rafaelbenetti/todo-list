@@ -11,6 +11,7 @@
   ],
   "homepage": "https://github.com/rafaelbenetti/todo-list",
   "dependencies": {
-    "angular": "^1.6.4"
+    "angular": "^1.6.4",
+    "Sortable": "sortablejs#^1.5.1"
   }
 }

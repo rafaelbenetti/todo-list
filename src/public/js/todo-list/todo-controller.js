@@ -70,6 +70,27 @@
             controller.todos[getIndexBy(todo._id)] = todo;
         }
 
+        let reorderTodoList = function() {
+            var orders = Array.from(document.getElementById('todo-lists').children);
+            orders.map((value, index) => {
+                let todo = controller.todos[getIndexBy(value.id)];
+                todo.order = index;
+                todoService.update(todo);
+            });
+        }
+
+        let configureOrderedList = () => {
+            var list = document.getElementById("todo-lists");
+            Sortable.create(list, {
+                handle: '.drag-handle',
+                animation: 150,
+                onUpdate: () => {
+                    reorderTodoList();
+	            }
+            });
+        }
+
         controller.findAll();
+        configureOrderedList();
     };
 })();
