@@ -11,7 +11,6 @@ services:
       - 6379:6379
   api:
     environment:
-      - NODE_ENV=dev
       - SESSION_SECRET_KEY=parangaricutirimiruaro
     image: rafaelbenetti/todo-list
     volumes:
@@ -20,4 +19,4 @@ services:
       - 3000:3000
     depends_on:
       - db    
-    command: npm start & gulp     
+    command: npm install   
