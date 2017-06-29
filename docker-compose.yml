@@ -11,8 +11,6 @@ services:
       - 6379:6379
   api:
     image: rafaelbenetti/todo-list
-    volumes:
-      - /home/rafaelbenetti/workspace/todo-list:/usr/src/app
     ports:
       - 3000:3000
     depends_on:
