@@ -32,4 +32,5 @@ gulp.task('watch', () => {
     gulp.watch([publicFolder + 'scss/*.scss'], ['style']);
 });
 
-gulp.task('default', ['delete', 'style', 'watch']);
+gulp.task('default', ['delete', 'style']);
+gulp.task('default:development', ['delete', 'style', 'watch']);
