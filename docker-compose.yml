@@ -10,12 +10,14 @@ services:
     ports:
       - 6379:6379
   api:
-    image: rafaelbenetti/todo-list
-    ports:
-      - 3000:3000
-    depends_on:
-      - db
     environment:
       - NODE_ENV=dev
       - SESSION_SECRET_KEY=parangaricutirimiruaro
-    command: npm start & gulp
+    image: rafaelbenetti/todo-list
+    volumes:
+      - ${VOLUME_API}:/usr/src/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db    
+    command: npm start & gulp     
